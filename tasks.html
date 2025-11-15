@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks - FlowTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <nav class="nav-flex">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-tasks-alt"></i> FlowTrack
+                </a>
+                <div class="nav-actions">
+                    <a href="notes.html" class="btn btn-secondary">Notes</a>
+                    <a href="tasks.html" class="btn btn-secondary">Tasks</a>
+                    <a href="stats.html" class="btn btn-secondary">Stats</a>
+                    <a href="profile.html" class="btn btn-secondary">Profile</a>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding:3rem 0;">
+        <section class="tasks-section">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:2rem;">
+                <h1 style="color:var(--color-text-primary);">Tasks</h1>
+                <div class="task-filters" style="display:flex;gap:0.5rem;">
+                    <button class="btn btn-secondary filter-btn active" data-filter="all">All</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="active">Active</button>
+                    <button class="btn btn-secondary filter-btn" data-filter="completed">Completed</button>
+                </div>
+            </div>
+
+            <!-- Search Bar for Tasks -->
+            <div style="margin-bottom:1.5rem;">
+                <input 
+                  type="text" 
+                  id="search-tasks" 
+                  placeholder="🔍 Search tasks..." 
+                  style="width:100%; padding:0.75rem; border-radius:8px; background:var(--color-surface-100); border:1px solid var(--color-border); color:var(--color-text-primary); font-family:inherit; font-size:1rem;"
+                >
+            </div>
+
+            <div class="card" style="padding:1.25rem;">
+                <form id="add-task-form" style="display:flex;gap:1rem;">
+                    <input type="text" id="task-input" placeholder="Add a new task..." required
+                        style="flex:1;padding:0.75rem;border-radius:8px;border:1px solid var(--color-border);background:var(--color-surface-200);color:var(--color-text-primary);">
+                    <button type="submit" class="btn btn-primary">Add Task</button>
+                </form>
+            </div>
+
+            <div id="tasks-list" style="margin-top:1.5rem;display:flex;flex-direction:column;gap:0.75rem;">
+                <!-- Tasks will be rendered here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">&copy; 2025 FlowTrack</div>
+    </footer>
+
+    <script src="../java script/main.js"></script>
+    <script src="../java script/tasks.js"></script>
+</body>
+</html>
