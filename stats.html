@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats - FlowTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <nav class="nav-flex">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-tasks-alt"></i> FlowTrack
+                </a>
+                <div class="nav-actions">
+                    <a href="notes.html" class="btn btn-secondary">Notes</a>
+                    <a href="tasks.html" class="btn btn-secondary">Tasks</a>
+                    <a href="stats.html" class="btn btn-secondary">Stats</a>
+                    <a href="profile.html" class="btn btn-secondary">Profile</a>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding:3rem 0;">
+        <section class="stats-section">
+            <h1 style="color:var(--color-text-primary);margin-bottom:2rem;">Your Progress</h1>
+            
+            <div class="stats-grid" style="display:grid;grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));gap:1.5rem;">
+                <!-- Tasks Stats -->
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                        <i class="fas fa-tasks" style="color:var(--color-accent);font-size:1.5rem;"></i>
+                        <h2 style="color:var(--color-text-primary);font-size:1.25rem;">Tasks</h2>
+                    </div>
+                    <div class="stats-numbers" style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div>
+                            <div style="color:var(--color-text-muted);font-size:0.875rem;">Completed</div>
+                            <div id="completed-tasks" style="color:var(--color-text-primary);font-size:1.5rem;font-weight:600;">0</div>
+                        </div>
+                        <div>
+                            <div style="color:var(--color-text-muted);font-size:0.875rem;">Active</div>
+                            <div id="active-tasks" style="color:var(--color-text-primary);font-size:1.5rem;font-weight:600;">0</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notes Stats -->
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                        <i class="fas fa-note-sticky" style="color:var(--color-accent);font-size:1.5rem;"></i>
+                        <h2 style="color:var(--color-text-primary);font-size:1.25rem;">Notes</h2>
+                    </div>
+                    <div>
+                        <div style="color:var(--color-text-muted);font-size:0.875rem;">Total Notes</div>
+                        <div id="total-notes" style="color:var(--color-text-primary);font-size:1.5rem;font-weight:600;">0</div>
+                    </div>
+                </div>
+
+                <!-- Focus Time (Placeholder) -->
+                <div class="card" style="padding:1.5rem;">
+                    <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem;">
+                        <i class="fas fa-clock" style="color:var(--color-accent);font-size:1.5rem;"></i>
+                        <h2 style="color:var(--color-text-primary);font-size:1.25rem;">Focus Time</h2>
+                    </div>
+                    <div>
+                        <div style="color:var(--color-text-muted);font-size:0.875rem;">Today's Focus</div>
+                        <div style="color:var(--color-text-primary);font-size:1.5rem;font-weight:600;">
+                            Coming soon
+                            <span style="font-size:0.875rem;color:var(--color-text-muted);font-weight:normal;">
+                                (Premium)
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Weekly Activity -->
+            <div class="card" style="margin-top:2rem;padding:1.5rem;">
+                <h2 style="color:var(--color-text-primary);font-size:1.25rem;margin-bottom:1rem;">
+                    Weekly Activity
+                </h2>
+                <div id="activity-chart" style="height:100px;display:flex;align-items:flex-end;gap:0.5rem;padding-top:1rem;"></div>
+                <div style="display:flex;justify-content:space-between;margin-top:0.5rem;color:var(--color-text-muted);font-size:0.875rem;">
+                    <span>Mon</span>
+                    <span>Tue</span>
+                    <span>Wed</span>
+                    <span>Thu</span>
+                    <span>Fri</span>
+                    <span>Sat</span>
+                    <span>Sun</span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">&copy; 2025 FlowTrack</div>
+    </footer>
+
+    <script src="../java script/main.js"></script>
+    <script src="../java script/stats.js"></script>
+</body>
+</html>
