@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - FlowTrack</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header class="navbar">
+        <div class="container">
+            <nav class="nav-flex">
+                <a href="index.html" class="nav-logo">
+                    <i class="fas fa-tasks-alt"></i> FlowTrack
+                </a>
+                <div class="nav-actions">
+                    <a href="notes.html" class="btn btn-secondary">Notes</a>
+                    <a href="tasks.html" class="btn btn-secondary">Tasks</a>
+                    <a href="stats.html" class="btn btn-secondary">Stats</a>
+                    <a href="profile.html" class="btn btn-secondary">Profile</a>
+                    <button id="logout-btn" class="btn btn-secondary">Logout</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container" style="padding:3rem 0;">
+        <section class="profile-section">
+            <h1 style="color:var(--color-text-primary);margin-bottom:2rem;">Profile</h1>
+            
+            <!-- Profile Card -->
+            <div class="card" style="max-width:600px;margin:0 auto;padding:2rem;">
+                <!-- Avatar/Initial Circle -->
+                <div style="width:80px;height:80px;background:var(--color-accent);border-radius:50%;margin:0 auto 1.5rem;display:flex;align-items:center;justify-content:center;font-size:2rem;color:var(--color-bg);font-weight:600;" id="avatar-circle">
+                    <!-- Initial will be set by JS -->
+                </div>
+
+                <!-- View Mode -->
+                <div id="view-mode">
+                    <div class="profile-field" style="margin-bottom:1.5rem;text-align:center;">
+                        <div style="color:var(--color-text-muted);font-size:0.875rem;margin-bottom:0.25rem;">Name</div>
+                        <div id="display-name" style="color:var(--color-text-primary);font-size:1.25rem;font-weight:500;">Loading...</div>
+                    </div>
+
+                    <div class="profile-field" style="margin-bottom:1.5rem;text-align:center;">
+                        <div style="color:var(--color-text-muted);font-size:0.875rem;margin-bottom:0.25rem;">Email</div>
+                        <div id="display-email" style="color:var(--color-text-primary);">Loading...</div>
+                    </div>
+
+                    <button id="edit-btn" class="btn btn-primary" style="width:100%;margin-top:1rem;">
+                        Edit Profile
+                    </button>
+                </div>
+
+                <!-- Edit Mode -->
+                <form id="edit-mode" style="display:none;">
+                    <div class="form-group">
+                        <label for="edit-name">Name</label>
+                        <input type="text" id="edit-name" required style="width:100%;">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="edit-email">Email</label>
+                        <input type="email" id="edit-email" required style="width:100%;">
+                    </div>
+
+                    <div style="display:flex;gap:1rem;margin-top:1.5rem;">
+                        <button type="submit" class="btn btn-primary" style="flex:1;">Save Changes</button>
+                        <button type="button" id="cancel-edit" class="btn btn-secondary" style="flex:1;">Cancel</button>
+                    </div>
+                </form>
+
+                <!-- Account Stats -->
+                <div style="margin-top:2rem;padding-top:2rem;border-top:1px solid var(--color-border);">
+                    <h3 style="color:var(--color-text-primary);font-size:1.1rem;margin-bottom:1rem;">Account Stats</h3>
+                    
+                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;">
+                        <div>
+                            <div style="color:var(--color-text-muted);font-size:0.875rem;">Member Since</div>
+                            <div id="member-since" style="color:var(--color-text-primary);">Loading...</div>
+                        </div>
+                        <div>
+                            <div style="color:var(--color-text-muted);font-size:0.875rem;">Total Items</div>
+                            <div id="total-items" style="color:var(--color-text-primary);">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">&copy; 2025 FlowTrack</div>
+    </footer>
+
+    <script src="../java script/main.js"></script>
+    <script src="../java script/profile.js"></script>
+</body>
+</html>
